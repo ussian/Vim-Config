@@ -32,4 +32,37 @@ sudo dd bs=4M if=<path to iso file> of=<path to device> && sync
 
 # This means you have a root prompt ready for use. Be warned you can potentionaly destroy all data on your disks which i will do during the partioning. You can also follow my partioning with ubuntu installed there i will keep my ubuntu data for dual boot.
 
-#
+
+# First thing to is remove the anoying beeb sound when ever you tab-complete or try to tab-complete a command. (or doing something the terminal doesnt like in general)
+setterm -blength 0
+-------------------------------> Is setterm permantly or temporary <-------------------------------
+
+
+# Second thing to do is load the correct keymap (The standard is US)
+
+# replace DK with yours country's letter (eg. dk for denmark, uk for united kingdom, us for united states, es for spain)
+loadkeys <country letters goes here>
+# This command is only temporary, that means after restart it will be back at US
+
+# To list all avaible keymaps do the following (you need the keymaps for making the change permanent)
+find /usr/share/kbd/keymaps | less
+# Or to find only those with your country letters. (this finds all files in keymaps that contains <your country letters>)
+find /usr/share/kbd/keymaps | grep -i <country letters go here>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

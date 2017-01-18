@@ -44,12 +44,34 @@ setterm -blength 0
 loadkeys <country letters goes here>
 # This command is only temporary, that means after restart it will be back at US
 
-# To list all avaible keymaps do the following (you need the keymaps for making the change permanent)
+# To list all avaible keymaps do the following 
 find /usr/share/kbd/keymaps | less
+
 # Or to find only those with your country letters. (this finds all files in keymaps that contains <your country letters>)
 find /usr/share/kbd/keymaps | grep -i <country letters go here>
+# You will propally see something like this
+    # "/usr/share/kbd/keymaps/i386/qwerty/dk-latin1.map.gz
+    # "/usr/share/kbd/keymaps/i386/qwerty/dk.map.gz
+    # "/usr/share/kbd/keymaps/i386/qwerty/mac-dk-latin1.map.gz
+    
+# For more information on "nodeadkeys" look here (http://askubuntu.com/questions/56560/what-exactly-is-meant-by-eliminate-dead-keys)
+# I dont know the difference between "dk-latin1" and "dk", so just try one or other and test the layout byt typing speciel characters. if the wrong character comes try another keymap.
+
+# To set current keymap, and to make it permantly do the following:
+localectl set-keymap --no-convert <insert keymap file>
 
 
+# Next up is to check your internet connection (I recommend that you use a Ethernet connection ie. a cable connection)
+ping google.dk
+# You can allways swap out google with a site you know that you can reach. the site have to be on the World Wide Web (ie, www)
+# If you get "Name or service not know" you either typed the site wrong or you got no connection
+
+
+# To check the time of the system type:
+timedatectl
+# This should show you a date and a clock plus some more stuff
+# to make sure the clock is accurate do this:
+timedatectl set-ntp true
 
 
 

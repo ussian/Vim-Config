@@ -5,6 +5,10 @@
 # Disclaimer: Im no way a Linux or Arch Linux pro user, ive just written down what i did to make it work for me.
 
 
+# A good place to read up on most if not all of this stuff is the Arch wiki (https://wiki.archlinux.org/).
+# Else a quick google search can get you a long way
+
+
 # Make a bootable device(USB, CD/DVD etc.) with archlinux iso (https://www.archlinux.org/download/).
 # You can do that with Rufus on windows (its free), or if using Ubuntu follow these instructions (https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu).
 # Else you run the following command or something similar (Maybe even google it?).
@@ -73,6 +77,15 @@ timedatectl
 # to make sure the clock is accurate do this:
 timedatectl set-ntp true
 
+
+# Now is the time for disk Format and pationing
+# There is a handfull of tools and commands avaiable ill only be using some of them. You check the list here (https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools)
+# To list file systems and disks:
+lsblk -f -p
+# This should show something like this:
+    # "NAME
+    # "/dev/sdb
+    # "├
 
 
 

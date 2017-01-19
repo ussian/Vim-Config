@@ -73,7 +73,7 @@ ping google.dk
 
 # To check the time of the system type:
 timedatectl
-# This should show you a date and a clock plus some more stuff
+# This should show you a date and a clock, plus some more stuff
 # to make sure the clock is accurate do this:
 timedatectl set-ntp true
 
@@ -83,21 +83,18 @@ timedatectl set-ntp true
 # To list file systems and disks:
 lsblk -f -p
 # This should show something like this:
-    # "NAME
-    # "/dev/sdb
-    # "├
+    # "NAME         FSTYPE      LABEL       UUID
+    # "/dev/sdb                                                                                                 "
+    # "└─/dev/sdb1  vfat        ARCH_201701 1702-0227                               /run/archiso/bootmnt        "
+    # "/dev/sr0                                                                                                 "
+    # "/dev/loop0   squashfs                                                        /run/archiso/sfs/airootfs   "
+    # "/dev/sda                                                                                                 "
+    # "└─/dev/sda1  ext4                    f2b67d75-090a-4d96-8dfb-e814dd07fd13                                "
 
-
-
-
-
-
-
-
-
-
-
-
+# The "/dev/sdb" is my pc disk with my previous Arch Linux installation while the "/dev/sda" is my bootable usb-disk, where the Arch is image is placed.
+# Disk name in linux are named after the alfabet, so sd*(where * is the next letter in the alfabet). (eg. sda for the first disk, sdb for the secound disk, sdc for the third disk etc.)
+# The secound line "└─/dev/sdb1" is a partion of disk "sdb" so partions are named after number (eg. sdb1, sdb2, sdb3)
+# You should just ignore "/dev/sr0", "/dev/loop0" and your bootmedia (in my case /dev/sda). All of these are used by the bootmedia.
 
 
 

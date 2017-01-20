@@ -1,12 +1,12 @@
 ####Table of contents
-[Pre reading notes](Arch-Base-Install-+-Grub-(BIOS).md#Pre reading notes)
-[Create bootable media](Arch-Base-Install-+-Grub-(BIOS).md#Create bootable media)
+ * [Pre reading notes](Arch-Base-Install-+-Grub-(BIOS).md#Pre reading notes)
+ * [Create bootable media](Arch-Base-Install-+-Grub-(BIOS).md#Create bootable media)
 
 
 ###Pre reading notes
 
-Notes completed xx-xx-xxxx
-Last update xx-xx-xxxx
+ Notes completed xx-xx-xxxx
+ Last update xx-xx-xxxx
 
 To print this file in a descent format, click the "Raw" button in the top right corner of this box.
 Disclaimer: Im no way a Linux or Arch Linux pro user, ive just written down what i did to make it work for me.

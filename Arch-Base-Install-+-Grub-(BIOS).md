@@ -63,8 +63,8 @@ setterm -blength 0
 
 # Second thing to do is load the correct keymap (The standard is US)
 
-replace DK with yours country's letter (eg. dk for denmark, uk for united kingdom, us for united states, es for spain)
-loadkeys <country letters goes here>
+replace DK with yours country´s letter (eg. dk for denmark, uk for united kingdom, us for united states, es for spain)
+loadkeys "<country letters goes here>"
 This command is only temporary, that means after restart it will be back at US
 
 To list all avaible keymaps do the following 

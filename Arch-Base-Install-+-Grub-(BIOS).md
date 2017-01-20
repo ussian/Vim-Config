@@ -1,8 +1,8 @@
 ####Table of contents
  * [Pre reading notes](Arch-Base-Install-+-Grub-(BIOS).md#pre-reading-notes)
- * [Create bootable media](Arch-Base-Install-+-Grub-(BIOS).md#Create-bootable-media)
- * [Arch Linux iso image Boot Menu](Arch-Base-Install-+-Grub-(BIOS).md#Arch-Linux-iso-image-Boot-Menu)
- * [First things first](Arch-Base-Install-+-Grub-(BIOS).md#First-things-first)
+ * [Create bootable media](Arch-Base-Install-+-Grub-(BIOS).md#create-bootable-media)
+ * [Arch Linux iso image Boot Menu](Arch-Base-Install-+-Grub-(BIOS).md#arch-linux-iso-image-boot-menu)
+ * [First things first](Arch-Base-Install-+-Grub-(BIOS).md#first-things-first)
  * [](Arch-Base-Install-+-Grub-(BIOS).md#)
  * [](Arch-Base-Install-+-Grub-(BIOS).md#)
 

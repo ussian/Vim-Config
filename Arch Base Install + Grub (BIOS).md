@@ -20,7 +20,8 @@ replace then anglebrackets <something> with the appropiate path.
 ```bash
 sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync
 ```
-Then boot into your install media (USB, CD/DVD etc.) by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu).
+### Boot the Arch install media (USB, CD/DVD etc.) <BR>
+You do this by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu). <BR>
 If its booted correctly into the bootmedia, it should greet you with Arch Linux menu and the following options <BR>
     `Boot Arch Linux (x86_64)` <BR>
     `Boot Arch Linux (i686)` <BR>

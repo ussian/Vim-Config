@@ -1,5 +1,5 @@
 ####Table of contents
- * [Pre reading notes](Arch-Base-Install-+-Grub-(BIOS).md#Pre reading notes)
+ * [Pre reading notes](Arch-Base-Install-+-Grub-(BIOS).md#pre-reading-notes)
  * [Create bootable media](Arch-Base-Install-+-Grub-(BIOS).md#Create bootable media)
 
 

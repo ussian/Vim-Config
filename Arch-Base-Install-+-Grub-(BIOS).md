@@ -71,6 +71,9 @@ You will propally see something like this <BR>
     `/usr/share/kbd/keymaps/i386/qwerty/dk-latin1.map.gz` <BR>
     `/usr/share/kbd/keymaps/i386/qwerty/dk.map.gz`<BR>
     `/usr/share/kbd/keymaps/i386/qwerty/mac-dk-latin1.map.gz`<BR>
+    `/usr/share/kbd/keymaps/i386/qwertz/de-latin1-nodeadkeys.map.gz`<BR>
+    `/usr/share/kbd/keymaps/mac/all/mac-de-latin1-nodeadkeys.map.gz`<BR>
+    `/usr/share/kbd/keymaps/mac/all/mac-dk-latin1map.gz`<BR>
     
 For more information on "nodeadkeys" look here ([dead keys](http://askubuntu.com/questions/56560/what-exactly-is-meant-by-eliminate-dead-keys))
 I dont know the difference between "dk-latin1" and "dk", so just try one or other and test the layout byt typing speciel characters. if the wrong character comes try another keymap.

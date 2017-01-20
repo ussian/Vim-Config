@@ -22,14 +22,15 @@ sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync
 ```
 ### Boot the Arch install media (USB, CD/DVD etc.) <BR>
 You do this by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu). <BR>
-If its booted correctly into the bootmedia, it should greet you with Arch Linux menu and the following options <BR>
+If its booted correctly into the bootmedia, it should greet you with Arch Linux menu and the following options <BR><BR>
     `Boot Arch Linux (x86_64)` <BR>
     `Boot Arch Linux (i686)` <BR>
     `Boot existing OS` <BR>
     `Run Memtest86+ (Ram test)` <BR>
     `Hardware Information` <BR>
     `Reboot` <BR>
-    `Power Off` <BR>
+    `Power Off` <BR><BR>
+    
 You can navigate the menu with the arrow keys and click enter to choose the option
 For these notes i will be installing x86_64 Arch
 After choosing 64 or 32 bit arch will do its thing for a while and when its ready it will greet you with the following:

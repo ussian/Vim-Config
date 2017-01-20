@@ -50,18 +50,15 @@ After choosing 64 or 32 bit arch will do its thing for a while and when its read
     `root@archiso ~ #`<BR>
 
 This means you have a root prompt ready for use. **Be warned** you can potentionaly destroy all data on your disks in this terminal. its most likely to happen during the partioning and formatting.<BR>
+
 ###First things first
 
-
-# This means you have a root prompt ready for use. Be warned you can potentionaly destroy all data on your disks which i will do during the partioning. You can also follow my partioning with ubuntu installed there i will keep my ubuntu data for dual boot.
-
-
-# First thing to is remove the anoying beeb sound when ever you tab-complete or try to tab-complete a command. (or doing something the terminal doesnt like in general)
-setterm -blength 0
--------------------------------> Is setterm permantly or temporary <-------------------------------
+First thing to is remove the anoying beeb sound when ever you tab-complete or try to tab-complete a command. (or doing something the terminal doesnt like in general)<BR>
+```setterm -blength 0```
+**-------------------------------> Is setterm permantly or temporary <-------------------------------**
 
 
-# Second thing to do is load the correct keymap (The standard is US)
+Second thing to do is load the correct keymap (The standard is US)
 
 replace DK with yours country´s letter (eg. dk for denmark, uk for united kingdom, us for united states, es for spain)
 loadkeys "<country letters goes here>"

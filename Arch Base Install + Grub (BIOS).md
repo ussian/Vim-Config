@@ -12,13 +12,14 @@ Else a quick google search can get you a long way
 
 ###Create bootable media
 
-Make a bootable device(USB, CD/DVD etc.) with archlinux iso ([link](https://www.archlinux.org/download/)). <BR>
-You can do this with Rufus on windows (its free), or if using Ubuntu follow these instructions (https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu).
-Else you run the following command or something similar (Maybe even google it?).
+Make a bootable device(USB, CD/DVD etc.) with archlinux iso ([Download site](https://www.archlinux.org/download/)). <BR>
+You can do this with [Rufus](https://rufus.akeo.ie/) on windows (its free), or if using Ubuntu follow these [instructions] (https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu).
+Else you run the following command or something similar.
 
 replace then anglebrackets <something> with the appropiate path.
-sudo dd bs=4M if=<path to iso file> of=<path to device> && sync
-
+```bash
+sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync
+```
 Then boot into your install media (USB, CD/DVD etc.) by rebooting and at the begging of the startup process hit F9 (or whatever F# button that opens the bootmenu).
 If its booted correctly into the bootmedia, it should greet you with Arch Linux menu and the following options
     "Boot Arch Linux (x86_64)" (Choose this if you want a 64 bit Arch installation). 

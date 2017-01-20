@@ -1,10 +1,10 @@
 ####Table of contents
- * [Pre reading notes](#pre-reading-notes)
+ * [Pre reading notes](Arch-Base-Install-+-Grub-(BIOS).md#pre-reading-notes)
  * [Create bootable media](Arch-Base-Install-+-Grub-(BIOS).md#Create-bootable-media)
- * []()
- * []()
- * []()
- * []()
+ * [Arch Linux iso image Boot Menu](Arch-Base-Install-+-Grub-(BIOS).md#Arch-Linux-iso-image-Boot-Menu)
+ * [First things first](Arch-Base-Install-+-Grub-(BIOS).md#First-things-first)
+ * [](Arch-Base-Install-+-Grub-(BIOS).md#)
+ * [](Arch-Base-Install-+-Grub-(BIOS).md#)
 
 ###Pre reading notes
 
@@ -28,7 +28,7 @@ replace then anglebrackets <something> with the appropiate path.
 ```bash
 sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync
 ```
-### Arch Linux iso image Boot Menu <BR>
+###Arch Linux iso image Boot Menu <BR>
 Boot the Arch install media (USB, CD/DVD etc.)<BR>
 You do this by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu) and then choosing your install media. <BR>
 If it´s booted correctly into the bootmedia, it should greet you with an Arch Linux menu and the following options <BR><BR>
@@ -49,4 +49,5 @@ After choosing 64 or 32 bit arch will do its thing for a while and when its read
     `archiso login: root (automatic login)`<BR>
     `root@archiso ~ #`<BR>
 
-This means you have a root prompt ready for use. **Be warned** you can potentionaly destroy all data on your disks in this terminal. its most likely to happen during the partioning and formatting.
+This means you have a root prompt ready for use. **Be warned** you can potentionaly destroy all data on your disks in this terminal. its most likely to happen during the partioning and formatting.<BR>
+###First things first

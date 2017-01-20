@@ -24,7 +24,7 @@ Make a bootable device(USB, CD/DVD etc.) with archlinux iso ([Download site](htt
 You can do this with [Rufus](https://rufus.akeo.ie/) on windows (its free), or if using Ubuntu follow these [instructions] (https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu).
 Else you run the following command or something similar.
 
-replace then anglebrackets <something> with the appropiate path.
+replace the `/home/ussian/Downloads/ArchVersion.iso` and `/dev/sdb1` with the appropiate path.
 ```bash
 sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync
 ```

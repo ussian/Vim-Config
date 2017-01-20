@@ -1,3 +1,8 @@
+####Table of contents
+[Pre reading notes]()
+
+
+
 ###Pre reading notes
 
 Notes completed xx-xx-xxxx
@@ -22,7 +27,7 @@ sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync
 ```
 ### Arch Linux iso image Boot Menu <BR>
 Boot the Arch install media (USB, CD/DVD etc.)<BR>
-You do this by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu). <BR>
+You do this by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu) and then choosing your install media. <BR>
 If it´s booted correctly into the bootmedia, it should greet you with an Arch Linux menu and the following options <BR><BR>
     `Boot Arch Linux (x86_64)` (x86_64 means 64 bit) <BR>
     `Boot Arch Linux (i686)` (i686 means 32 bit) <BR>
@@ -34,10 +39,11 @@ If it´s booted correctly into the bootmedia, it should greet you with an Arch L
     
 You can navigate the menu with the arrow keys and click enter to choose the highlighted option. <BR>
 The option `Boot Arch Linux (x86_64)` wont be availble if your machine cant run 64 bit OS <BR><BR>
-For these notes i will be installing x86_64 Arch
+
+For these notes i will be installing x86_64 Arch <BR>
 After choosing 64 or 32 bit arch will do its thing for a while and when its ready it will greet you with the following:<BR>
     `Arch Linux "(version number)"` <BR>
     `archiso login: root (automatic login)`<BR>
     `root@archiso ~ #`<BR>
 
-This means you have a root prompt ready for use. Be warned you can potentionaly destroy all data on your disks which i will do during the partioning. You can also follow my partioning with ubuntu installed there i will keep my ubuntu data for dual boot.
+This means you have a root prompt ready for use. **Be warned** you can potentionaly destroy all data on your disks in this terminal. its most likely to happen during the partioning and formatting.

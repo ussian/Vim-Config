@@ -24,8 +24,8 @@ Make a bootable device(USB, CD/DVD etc.) with archlinux iso ([Download site](htt
 You can do this with [Rufus](https://rufus.akeo.ie/) on windows (its free), or if using Ubuntu follow these [instructions] (https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu).
 Else you run the following command or something similar.
 
-replace the `/home/ussian/Downloads/ArchVersion.iso` and `/dev/sdb1` with the appropiate path.<BR>
 `sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync`<BR>
+replace the `/home/ussian/Downloads/ArchVersion.iso` and `/dev/sdb1` with the appropiate path.<BR>
 ###Arch Linux iso image Boot Menu<BR>
 Boot the Arch install media (USB, CD/DVD etc.)<BR>
 You do this by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu) and then choosing your install media. <BR>
@@ -62,17 +62,17 @@ replace DK with yours country´s letter (eg. dk for denmark, uk for united kingd
 `loadkeys dk`<BR>
 This command is only temporary, that means after restart it will be back at US
 
-To list all avaible keymaps do the following 
-find /usr/share/kbd/keymaps | less
+To list all avaible keymaps do the following<BR> 
+`find /usr/share/kbd/keymaps | less` <BR>
 
-Or to find only those with your country letters. (this finds all files in keymaps that contains <your country letters>)
-find /usr/share/kbd/keymaps | grep -i <country letters go here>
-You will propally see something like this
-    /usr/share/kbd/keymaps/i386/qwerty/dk-latin1.map.gz
-    /usr/share/kbd/keymaps/i386/qwerty/dk.map.gz
-    /usr/share/kbd/keymaps/i386/qwerty/mac-dk-latin1.map.gz
+Or to find only those with your country letters. (this finds all files in keymaps that contains "dk". change "dk" to you country letters) <BR>
+`find /usr/share/kbd/keymaps | grep -i dk` <BR>
+You will propally see something like this <BR>
+    `/usr/share/kbd/keymaps/i386/qwerty/dk-latin1.map.gz` <BR>
+    `/usr/share/kbd/keymaps/i386/qwerty/dk.map.gz`<BR>
+    `/usr/share/kbd/keymaps/i386/qwerty/mac-dk-latin1.map.gz`<BR>
     
-For more information on "nodeadkeys" look here (http://askubuntu.com/questions/56560/what-exactly-is-meant-by-eliminate-dead-keys)
+For more information on "nodeadkeys" look here ([dead keys](http://askubuntu.com/questions/56560/what-exactly-is-meant-by-eliminate-dead-keys))
 I dont know the difference between "dk-latin1" and "dk", so just try one or other and test the layout byt typing speciel characters. if the wrong character comes try another keymap.
 
 To set current keymap, and to make it permantly do the following:

@@ -20,7 +20,8 @@ replace then anglebrackets <something> with the appropiate path.
 ```bash
 sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync
 ```
-### Boot the Arch install media (USB, CD/DVD etc.) <BR>
+### Arch Linux iso image Boot Menu <BR>
+Boot the Arch install media (USB, CD/DVD etc.)<BR>
 You do this by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu). <BR>
 If it´s booted correctly into the bootmedia, it should greet you with an Arch Linux menu and the following options <BR><BR>
     `Boot Arch Linux (x86_64)` (x86_64 means 64 bit) <BR>
@@ -34,7 +35,7 @@ If it´s booted correctly into the bootmedia, it should greet you with an Arch L
 You can navigate the menu with the arrow keys and click enter to choose the highlighted option. <BR>
 The option `Boot Arch Linux (x86_64)` wont be availble if your machine cant run 64 bit OS <BR><BR>
 For these notes i will be installing x86_64 Arch
-After choosing 64 or 32 bit arch will do its thing for a while and when its ready it will greet you with the following:
+After choosing 64 or 32 bit arch will do its thing for a while and when its ready it will greet you with the following:<BR>
     `Arch Linux "(version number)"` <BR>
     `archiso login: root (automatic login)`<BR>
     `root@archiso ~ #`<BR>

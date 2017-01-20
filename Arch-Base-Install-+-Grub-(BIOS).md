@@ -1,7 +1,7 @@
 ####Table of contents
  * [Pre reading notes](Arch-Base-Install-+-Grub-(BIOS).md#pre-reading-notes)
  * [Create bootable media](Arch-Base-Install-+-Grub-(BIOS).md#create-bootable-media)
- * [Arch Linux iso image Boot Menu](Arch-Base-Install-+-Grub-(BIOS).md#arch-linux-iso-image-boot-menu-)
+ * [Arch Linux iso image Boot Menu](Arch-Base-Install-+-Grub-(BIOS).md#arch-linux-iso-image-boot-menu)
  * [First things first](Arch-Base-Install-+-Grub-(BIOS).md#first-things-first)
  * [](Arch-Base-Install-+-Grub-(BIOS).md#)
  * [](Arch-Base-Install-+-Grub-(BIOS).md#)
@@ -28,7 +28,7 @@ replace then anglebrackets <something> with the appropiate path.
 ```bash
 sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync
 ```
-###Arch Linux iso image Boot Menu <BR>
+###Arch Linux iso image Boot Menu<BR>
 Boot the Arch install media (USB, CD/DVD etc.)<BR>
 You do this by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu) and then choosing your install media. <BR>
 If it´s booted correctly into the bootmedia, it should greet you with an Arch Linux menu and the following options <BR><BR>
@@ -41,7 +41,7 @@ If it´s booted correctly into the bootmedia, it should greet you with an Arch L
     `Power Off` <BR><BR>
     
 You can navigate the menu with the arrow keys and click enter to choose the highlighted option. <BR>
-The option `Boot Arch Linux (x86_64)` wont be availble if your machine cant run 64 bit OS <BR><BR>
+The option `Boot Arch Linux (x86_64)` wont be availble if your machine can´t run 64 bit OS <BR><BR>
 
 For these notes i will be installing x86_64 Arch <BR>
 After choosing 64 or 32 bit arch will do its thing for a while and when its ready it will greet you with the following:<BR>
@@ -51,3 +51,47 @@ After choosing 64 or 32 bit arch will do its thing for a while and when its read
 
 This means you have a root prompt ready for use. **Be warned** you can potentionaly destroy all data on your disks in this terminal. its most likely to happen during the partioning and formatting.<BR>
 ###First things first
+
+
+# This means you have a root prompt ready for use. Be warned you can potentionaly destroy all data on your disks which i will do during the partioning. You can also follow my partioning with ubuntu installed there i will keep my ubuntu data for dual boot.
+
+
+# First thing to is remove the anoying beeb sound when ever you tab-complete or try to tab-complete a command. (or doing something the terminal doesnt like in general)
+setterm -blength 0
+-------------------------------> Is setterm permantly or temporary <-------------------------------
+
+
+# Second thing to do is load the correct keymap (The standard is US)
+
+replace DK with yours country's letter (eg. dk for denmark, uk for united kingdom, us for united states, es for spain)
+loadkeys <country letters goes here>
+This command is only temporary, that means after restart it will be back at US
+
+To list all avaible keymaps do the following 
+find /usr/share/kbd/keymaps | less
+
+Or to find only those with your country letters. (this finds all files in keymaps that contains <your country letters>)
+find /usr/share/kbd/keymaps | grep -i <country letters go here>
+You will propally see something like this
+    /usr/share/kbd/keymaps/i386/qwerty/dk-latin1.map.gz
+    /usr/share/kbd/keymaps/i386/qwerty/dk.map.gz
+    /usr/share/kbd/keymaps/i386/qwerty/mac-dk-latin1.map.gz
+    
+For more information on "nodeadkeys" look here (http://askubuntu.com/questions/56560/what-exactly-is-meant-by-eliminate-dead-keys)
+I dont know the difference between "dk-latin1" and "dk", so just try one or other and test the layout byt typing speciel characters. if the wrong character comes try another keymap.
+
+To set current keymap, and to make it permantly do the following:
+localectl set-keymap --no-convert <insert keymap file>
+
+
+Next up is to check your internet connection (I recommend that you use a Ethernet connection ie. a cable connection)
+ping google.dk
+You can allways swap out google with a site you know that you can reach. the site have to be on the World Wide Web (ie, www)
+If you get "Name or service not know" you either typed the site wrong or you got no connection
+
+
+To check the time of the system type:
+timedatectl
+This should show you a date and a clock, plus some more stuff
+to make sure the clock is accurate do this:
+timedatectl set-ntp true

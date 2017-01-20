@@ -24,10 +24,8 @@ Make a bootable device(USB, CD/DVD etc.) with archlinux iso ([Download site](htt
 You can do this with [Rufus](https://rufus.akeo.ie/) on windows (its free), or if using Ubuntu follow these [instructions] (https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu).
 Else you run the following command or something similar.
 
-replace the `/home/ussian/Downloads/ArchVersion.iso` and `/dev/sdb1` with the appropiate path.
-```bash
-sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync
-```
+replace the `/home/ussian/Downloads/ArchVersion.iso` and `/dev/sdb1` with the appropiate path.<BR>
+`sudo dd bs=4M if=/home/ussian/Downloads/ArchVersion.iso of=/dev/sdb1 && sync`<BR>
 ###Arch Linux iso image Boot Menu<BR>
 Boot the Arch install media (USB, CD/DVD etc.)<BR>
 You do this by rebooting and at the beginning of the startup process (ie. BIOS startup) and hiting F9 (or whatever F# button that opens the bootmenu) and then choosing your install media. <BR>
@@ -60,8 +58,8 @@ First thing to is remove the anoying beeb sound when ever you tab-complete or tr
 
 Second thing to do is load the correct keymap (The standard is US)
 
-replace DK with yours country´s letter (eg. dk for denmark, uk for united kingdom, us for united states, es for spain)
-loadkeys "<country letters goes here>"
+replace DK with yours country´s letter (eg. dk for denmark, uk for united kingdom, us for united states, es for spain)<BR>
+`loadkeys dk`<BR>
 This command is only temporary, that means after restart it will be back at US
 
 To list all avaible keymaps do the following 

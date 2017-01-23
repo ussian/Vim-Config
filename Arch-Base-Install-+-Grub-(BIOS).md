@@ -161,12 +161,12 @@ mount /dev/sda1 /mnt
 you´ll also need to mount your other partions if you have any other partions. I wont be doing this i´ll only show how to do it. So i wont be doing anything inside that box.
 
 
-┌─────────────────────────────────────────────────────┐<BR>
-│Create a folder for your partion on you mounted root partion for this example i´ll be doing it for the "boot" partion  │<BR>
-│`mkdir /mnt/boot`                                 test                                                                     │<BR>
-│That will create the boot folder on your root partion                                                                  │<BR>
-│Now you need to mount the boot partion to your boot folder:           test                                                 │<BR>
-│`mount /dev/sda2 /mnt/boot`                                                                                            │<BR>
-│`/dev/sda2` should be changed into the coresponding partion (ie. if you boot partion is "`/dev/sdb3`")                 │<BR>
-└─────────────────────────────────────────────────────┘<BR>
+┌───────────────────────────────────────────────────────────────────────────┐<BR>
+│Create a folder for your partion on you mounted root partion for this example i´ll be doing it for the "boot" partion│<BR>
+│`mkdir /mnt/boot`│<BR>
+│That will create the boot folder on your root partion│<BR>
+│Now you need to mount the boot partion to your boot folder:│<BR>
+│`mount /dev/sda2 /mnt/boot`│<BR>
+│`/dev/sda2` should be changed into the coresponding partion (ie. if you boot partion is "`/dev/sdb3`")│<BR>
+└──────────────────────────────────────────────────────────────────────────┘<BR>
 

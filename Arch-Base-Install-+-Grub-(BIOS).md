@@ -75,21 +75,21 @@ You will propally see something like this <BR>
     `/usr/share/kbd/keymaps/mac/all/mac-de-latin1-nodeadkeys.map.gz`<BR>
     `/usr/share/kbd/keymaps/mac/all/mac-dk-latin1map.gz`<BR>
     
-For more information on "nodeadkeys" look here ([dead keys](http://askubuntu.com/questions/56560/what-exactly-is-meant-by-eliminate-dead-keys))
-I dont know the difference between "dk-latin1" and "dk", so just try one or other and test the layout byt typing speciel characters. if the wrong character comes try another keymap.
+For more information on "nodeadkeys" look here ([dead keys](http://askubuntu.com/questions/56560/what-exactly-is-meant-by-eliminate-dead-keys)). <BR>
+I dont know the difference between "latin1" and non "latin1", so just try the one or the other and test the layout by typing speciel characters. if the wrong character comes on the screen try another keymap.
 
-To set current keymap, and to make it permantly do the following:
-localectl set-keymap --no-convert <insert keymap file>
+To set current keymap, and to make it permantly do the following (replace dk.map.gz with your keymap:<BR>
+`localectl set-keymap --no-convert dk.map.gz`
 
 
-Next up is to check your internet connection (I recommend that you use a Ethernet connection ie. a cable connection)
-ping google.dk
-You can allways swap out google with a site you know that you can reach. the site have to be on the World Wide Web (ie, www)
+Next up is to check your internet connection (I recommend that you use a Ethernet connection ie. a cable connection)<BR>
+`ping google.dk`<BR>
+You can allways swap out google with a site you know that you can reach.<BR>
 If you get "Name or service not know" you either typed the site wrong or you got no connection
 
 
-To check the time of the system type:
-timedatectl
-This should show you a date and a clock, plus some more stuff
-to make sure the clock is accurate do this:
-timedatectl set-ntp true
+To check the time of the system type:<BR>
+`timedatectl`<BR>
+This should show you a date and a clock, plus some more stuff. <BR>
+to make sure the clock is accurate do this:<BR>
+`timedatectl set-ntp true`<BR>

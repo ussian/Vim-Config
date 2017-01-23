@@ -97,7 +97,7 @@ to make sure the clock is accurate do this:<BR>
 
 
 
-##Partioning
+##Partioning and mounting
 There is a handfull of tools and commands avaiable ill only be using some of them. You check the list [here](https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools)<BR>
 To list file systems and disks:<BR>
 `lsblk -f -p`<BR>
@@ -172,3 +172,30 @@ you´ll also need to mount your other partions if you have any other partions. I
 │# /dev/sda2 should be changed into the coresponding partion (ie. if you boot partion is "/dev/sdb3")                   │
 └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+##Configure and install base system
+
+
+The `base` is needed for Arch Linux and the `base-devel` is used for ????
+`pacstrap /mnt base base-devel`
+This will install the `base` system and `base-devel` on to the `/mnt` (And remember we mounted our `/dev/sda1` to `/mnt`. So we are bassicly installing these packages to the new partion) 
+
+`genfstab -U /mnt >> /mnt/etc/fstab`<BR>
+
+
+This will change your root at the bootable media to the root on your newly installed packages.
+`arch-chroot /mnt`<BR>
+
+to view all the avaible tim zones run this command
+`ls /usr/share/zoneinfo`
+this will list all the different regions and the next command you´ll need to replace region with your region
+`ls /usr/shar/zoneinfo/region`
+this will list all cities in that region.
+to set the timezone, replace Region and City with you region and city
+ln -s /usr/share/zoneinfo/Region/City /etc/localtime
+
+
+
+
+
+

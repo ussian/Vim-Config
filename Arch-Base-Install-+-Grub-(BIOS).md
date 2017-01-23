@@ -121,44 +121,44 @@ For these notes i will make just 1 partion (a root partion) for everything.<BR>
 A command for that is the following:<BR>
 `cfdisk /dev/sda`
 
-Replace "sda" with the disk you want to install Arch Linux on
+Replace "sda" with the disk you want to install Arch Linux on<BR>
 That command will bring up a "Pseudo-graphics" interface. You use the arrow keys to navigate.
 
 If you by mistake deletes a partion you didn´t want to delete, just click enter when you are hovering over "[   Quit    ]"
 
-I only have 1 partion so i will be deleting just that by hovering over "/dev/sda1" with the up and down arrow keys and choose "[ Delete ]" by moving the hover bar with left and right arrow keys.
+I only have 1 partion so i will be deleting just that by hovering over "/dev/sda1" with the up and down arrow keys and choose "[ Delete ]" by moving the hover bar with left and right arrow keys.<BR>
 When you are hovering over the partion and "[ Delete ]" hit enter to delete it
 
-There should now be a new device called "Free space" which obviously isn´t a device but is just unallocated space
+There should now be a new device called "Free space" which obviously isn´t a device but is just unallocated space<BR>
 If you have multiple partions that you delete those will add up into the free space.
 
-To make a new partion hover over the "Free space" and "[   New   ]" then hit enter.
-It will by default suggest the maximum size of the partion which should amount to the same amount of free space
+To make a new partion hover over the "Free space" and "[   New   ]" then hit enter.<BR>
+It will by default suggest the maximum size of the partion which should amount to the same amount of free space<BR>
 And this is, as i said earlier, where there are multiple choicses on what to do and for those go look at the "partioning and formatting folder"
 
-Well i´ll be making just one root partion. To do this, you just choose the default size (eg. all of the free space)
-After choosing the size it will ask if should be a "[ primary ]" or "[extended]" you should choose "[ primary ]" if you are gonna have  four partions or less (more info in the "partioning and formatting folder").
+Well i´ll be making just one root partion. To do this, you just choose the default size (eg. all of the free space)<BR>
+After choosing the size it will ask if should be a "[ primary ]" or "[extended]" you should choose "[ primary ]" if you are gonna have  four partions or less (more info in the "partioning and formatting folder").<BR>
 When you have choosen the partion type you should be back at the same screen as when you ran the "cfdisk" command only difference would be the partions.
 
-I will be marking my single partion as "bootable" by hovering over the partion and the option "[bootable]" then hitting enter
+I will be marking my single partion as "bootable" by hovering over the partion and the option "[bootable]" then hitting enter<BR>
 More information on which partion should be bootable in the "partioning and formatting folder"
 
-To confirm the partion changes you will need to hover over the "[  Write  ]" option and hit enter
-You will then be asked if you are sure that you want to make these changes. type "yes" or "no" depending if you are done. Be warned you type "yes" you wont be able to get the data back.
+To confirm the partion changes you will need to hover over the "[  Write  ]" option and hit enter<BR>
+You will then be asked if you are sure that you want to make these changes. type "yes" or "no" depending if you are done. Be warned you type "yes" you wont be able to get the data back.<BR>
 Afterwards you just the hoverbar to the "[  Quit  ]" and hit enter to exit.
 
-Now when we are done with partioning we need to format (And again more details in "partioning and formatting folder")
-We will just format our single root partion to the filsystem "ext4". To do this run this command:
-`mkfs.ext4 /dev/sda1`
-Remember that we format partions and NOT disk so put that number at the end even if you only have one partion.
-If the partion contains a filesystem (even if you did delete you partion) it will ask if you want to proceed anyway here you should answer "y".
+Now when we are done with partioning we need to format (And again more details in "partioning and formatting folder")<BR>
+We will just format our single root partion to the filsystem "ext4". To do this run this command:<BR>
+`mkfs.ext4 /dev/sda1`<BR>
+Remember that we format partions and NOT disk so put that number at the end even if you only have one partion.<BR>
+If the partion contains a filesystem (even if you did delete you partion) it will ask if you want to proceed anyway here you should answer "y".<BR>
 if any errors occur, try googling it :)
 
 
-Now we are done with partioning and formatting and we now need to mount our newly made ROOT partion filesystem, you do that like so:
-mount /dev/sda1 /mnt
-"`/dev/sda1`" is you partion and "`/mnt`" is where you mount the partion to.
-you´ll also need to mount your other partions if you have any other partions. I wont be doing this i´ll only show how to do it. So i wont be doing anything inside that box.
+Now we are done with partioning and formatting and we now need to mount our newly made ROOT partion filesystem, you do that like so:<BR>
+`mount /dev/sda1 /mnt`<BR>
+"`/dev/sda1`" is you partion and "`/mnt`" is where you mount the partion to.<BR>
+you´ll also need to mount your other partions if you have any other partions. I wont be doing this i´ll only show how to do it. So i wont be doing anything inside that box.<BR>
 
 ```
 ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐

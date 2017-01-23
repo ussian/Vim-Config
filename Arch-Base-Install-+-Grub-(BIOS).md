@@ -97,7 +97,7 @@ to make sure the clock is accurate do this:<BR>
 
 
 
-###Formatig and partioning
+##Partioning
 There is a handfull of tools and commands avaiable ill only be using some of them. You check the list [here](https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools)<BR>
 To list file systems and disks:<BR>
 `lsblk -f -p`<BR>
@@ -126,39 +126,41 @@ That command will bring up a "Pseudo-graphics" interface. You use the arrow keys
 
 If you by mistake deletes a partion you didn´t want to delete, just click enter when you are hovering over "`[   Quit    ]`"<BR>
 
-I only have 1 partion so i will be deleting just that by hovering over "/dev/sda1" with the up and down arrow keys and choose "[ Delete ]" by moving the hover bar with left and right arrow keys.<BR>
-When you are hovering over the partion and "[ Delete ]" hit enter to delete it<BR>
+I only have 1 partion so i will be deleting just that by hovering over "`/dev/sda1`" with the up and down arrow keys and choose "`[ Delete ]`" by moving the hover bar with left and right arrow keys.<BR>
+When you are hovering over the partion and "`[ Delete ]`" hit enter to delete it.<BR>
 
-There should now be a new device called "Free space" which obviously isn´t a device but is just unallocated space<BR>
-If you have multiple partions that you delete those will add up into the free space.<BR>
+There should now be a new device called "`Free space`" which obviously isn´t a device but is just unallocated space<BR>
+If you have multiple partions that you delete, those will add up into the free space.<BR>
 
-To make a new partion hover over the "Free space" and "[   New   ]" then hit enter.<BR>
+To make a new partion hover over the "`Free space`" and "`[   New   ]`" then hit enter.<BR>
 It will by default suggest the maximum size of the partion which should amount to the same amount of free space<BR>
-And this is, as i said earlier, where there are multiple choicses on what to do and for those go look at the "partioning and formatting folder"<BR>
+And this is, as i said earlier, where there are multiple choicses on what to do and for those go look at the [Arch Wiki](https://wiki.archlinux.org/index.php/partitioning#Partition_scheme) or google it<BR>
 
 Well i´ll be making just one root partion. To do this, you just choose the default size (eg. all of the free space)<BR>
-After choosing the size it will ask if should be a "[ primary ]" or "[extended]" you should choose "[ primary ]" if you are gonna have  four partions or less (more info in the "partioning and formatting folder").<BR>
+After choosing the size it will ask if should be a "`[ primary ]`" or "`[extended]`" you should choose "`[ primary ]`" if you are gonna have  four partions or less (more information [here](http://www.howtogeek.com/193669/whats-the-difference-between-gpt-and-mbr-when-partitioning-a-drive/)).<BR>
 When you have choosen the partion type you should be back at the same screen as when you ran the "cfdisk" command only difference would be the partions.<BR>
 
 I will be marking my single partion as "bootable" by hovering over the partion and the option "[bootable]" then hitting enter<BR>
-More information on which partion should be bootable in the "partioning and formatting folder"<BR>
+More information on which partion should be bootable in the [Arch Wiki](https://wiki.archlinux.org/index.php/partitioning#Partition_scheme)<BR>
 
-To confirm the partion changes you will need to hover over the "[  Write  ]" option and hit enter<BR>
-You will then be asked if you are sure that you want to make these changes. type "yes" or "no" depending if you are done. Be warned you type "yes" you wont be able to get the data back.<BR>
-Afterwards you just the hoverbar to the "[  Quit  ]" and hit enter to exit.<BR>
+To confirm the partion changes you will need to hover over the "`[  Write  ]`" option and hit enter<BR>
+You will then be asked if you are sure that you want to make these changes. type "`yes`" or "`no`" depending if you are done. Be warned you type "`yes`" you wont be able to get the data back.<BR>
+Afterwards you just the hoverbar to the "`[  Quit  ]`" and hit enter to exit.<BR>
 
-Now when we are done with partioning we need to format (And again more details in "partioning and formatting folder")<BR>
+
+##Formating
+Now when we are done with partioning we need to format the partion(And again more details in [Arch Wiki filesystems](https://wiki.archlinux.org/index.php/File_systems#Create_a_filesystem))<BR>
 We will just format our single root partion to the filsystem "ext4". To do this run this command:<BR>
 `mkfs.ext4 /dev/sda1`<BR>
-Remember that we format partions and NOT disk so put that number at the end even if you only have one partion.<BR>
-If the partion contains a filesystem (even if you did delete you partion) it will ask if you want to proceed anyway here you should answer "y".<BR>
+Remember that we format partions and NOT disk so put that number at the end, even if you only have one partion.<BR>
+If the partion contains a filesystem (even if you did delete your partion) it will ask if you want to proceed anyway. Here you should answer "`y`".<BR>
 if any errors occur, try googling it :)<BR>
 
 
-Now we are done with partioning and formatting and we now need to mount our newly made ROOT partion filesystem, you do that like so:<BR>
+Now we are done with partioning and formatting and we now need to mount our newly made ROOT partion filesystem, you do this like so:<BR>
 `mount /dev/sda1 /mnt`<BR>
 "`/dev/sda1`" is you partion and "`/mnt`" is where you mount the partion to.<BR>
-you´ll also need to mount your other partions if you have any other partions. I wont be doing this i´ll only show how to do it. So i wont be doing anything inside that box.<BR>
+you´ll also need to mount your other partions if you have any other partions. I wont be doing this i´ll only show how to do it. So i wont be doing anything inside the box below.<BR>
 
 ```
 ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐

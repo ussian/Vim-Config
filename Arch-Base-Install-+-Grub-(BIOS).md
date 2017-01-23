@@ -92,16 +92,16 @@ To check the time of the system type:<BR>
 `timedatectl`<BR>
 This should show you a date and a clock, plus some more stuff. <BR>
 to make sure the clock is accurate do this:<BR>
-`timedatectl set-ntp true`<BR>
+`timedatectl set-ntp true`<BR><BR>
 
 
 
 
-Now is the time for disk Format and pationing
-There is a handfull of tools and commands avaiable ill only be using some of them. You check the list here (https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools)
-To list file systems and disks:
-lsblk -f -p
-This should show something like this:
+###Formatig and partioning
+There is a handfull of tools and commands avaiable ill only be using some of them. You check the list [here](https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools)<BR>
+To list file systems and disks:<BR>
+`lsblk -f -p`<BR>
+This should show something like this:<BR>
 ```
     NAME         FSTYPE      LABEL       UUID
     /dev/sdb                                                                                                 
@@ -111,48 +111,48 @@ This should show something like this:
     /dev/sda                                                                                                 
     └─/dev/sda1  ext4                    f2b67d75-090a-4d96-8dfb-e814dd07fd13                                
 ```
-The "/dev/sdb" is my pc disk with my previous Arch Linux installation while the "/dev/sda" is my bootable usb-disk, where the Arch is image is placed.
-Disk name in linux are named after the alfabet, so sd*(where * is the next letter in the alfabet). (eg. sda for the first disk, sdb for the secound disk, sdc for the third disk etc.)
-The secound line "└─/dev/sdb1" is a partion of disk "sdb" so partions are named after number (eg. sdb1, sdb2, sdb3)
-You should just ignore "/dev/sr0", "/dev/loop0" and your bootmedia (in my case /dev/sda). All of these are used by the bootmedia.
+The "/dev/sdb" is my pc disk with my previous Arch Linux installation while the "/dev/sda" is my bootable usb-disk, where the Arch is image is placed.<BR>
+Disk name in linux are named after the alfabet, so sd*(where * is the next letter in the alfabet). (eg. sda for the first disk, sdb for the secound disk, sdc for the third disk etc.)<BR>
+The secound line "└─/dev/sdb1" is a partion of disk "sdb" so partions are named after number (eg. sdb1, sdb2, sdb3)<BR>
+You should just ignore "/dev/sr0", "/dev/loop0" and your bootmedia (in my case /dev/sda). All of these are used by the bootmedia.<BR>
 
 There is alot of different ways to partion your disks so for more info check out the formating and partioning methods folder (or look it up on google)<BR>
 For these notes i will make just 1 partion (a root partion) for everything.<BR>
 A command for that is the following:<BR>
-`cfdisk /dev/sda`
+`cfdisk /dev/sda`<BR>
 
 Replace "sda" with the disk you want to install Arch Linux on<BR>
-That command will bring up a "Pseudo-graphics" interface. You use the arrow keys to navigate.
+That command will bring up a "Pseudo-graphics" interface. You use the arrow keys to navigate.<BR>
 
-If you by mistake deletes a partion you didn´t want to delete, just click enter when you are hovering over "[   Quit    ]"
+If you by mistake deletes a partion you didn´t want to delete, just click enter when you are hovering over "[   Quit    ]"<BR>
 
 I only have 1 partion so i will be deleting just that by hovering over "/dev/sda1" with the up and down arrow keys and choose "[ Delete ]" by moving the hover bar with left and right arrow keys.<BR>
-When you are hovering over the partion and "[ Delete ]" hit enter to delete it
+When you are hovering over the partion and "[ Delete ]" hit enter to delete it<BR>
 
 There should now be a new device called "Free space" which obviously isn´t a device but is just unallocated space<BR>
-If you have multiple partions that you delete those will add up into the free space.
+If you have multiple partions that you delete those will add up into the free space.<BR>
 
 To make a new partion hover over the "Free space" and "[   New   ]" then hit enter.<BR>
 It will by default suggest the maximum size of the partion which should amount to the same amount of free space<BR>
-And this is, as i said earlier, where there are multiple choicses on what to do and for those go look at the "partioning and formatting folder"
+And this is, as i said earlier, where there are multiple choicses on what to do and for those go look at the "partioning and formatting folder"<BR>
 
 Well i´ll be making just one root partion. To do this, you just choose the default size (eg. all of the free space)<BR>
 After choosing the size it will ask if should be a "[ primary ]" or "[extended]" you should choose "[ primary ]" if you are gonna have  four partions or less (more info in the "partioning and formatting folder").<BR>
-When you have choosen the partion type you should be back at the same screen as when you ran the "cfdisk" command only difference would be the partions.
+When you have choosen the partion type you should be back at the same screen as when you ran the "cfdisk" command only difference would be the partions.<BR>
 
 I will be marking my single partion as "bootable" by hovering over the partion and the option "[bootable]" then hitting enter<BR>
-More information on which partion should be bootable in the "partioning and formatting folder"
+More information on which partion should be bootable in the "partioning and formatting folder"<BR>
 
 To confirm the partion changes you will need to hover over the "[  Write  ]" option and hit enter<BR>
 You will then be asked if you are sure that you want to make these changes. type "yes" or "no" depending if you are done. Be warned you type "yes" you wont be able to get the data back.<BR>
-Afterwards you just the hoverbar to the "[  Quit  ]" and hit enter to exit.
+Afterwards you just the hoverbar to the "[  Quit  ]" and hit enter to exit.<BR>
 
 Now when we are done with partioning we need to format (And again more details in "partioning and formatting folder")<BR>
 We will just format our single root partion to the filsystem "ext4". To do this run this command:<BR>
 `mkfs.ext4 /dev/sda1`<BR>
 Remember that we format partions and NOT disk so put that number at the end even if you only have one partion.<BR>
 If the partion contains a filesystem (even if you did delete you partion) it will ask if you want to proceed anyway here you should answer "y".<BR>
-if any errors occur, try googling it :)
+if any errors occur, try googling it :)<BR>
 
 
 Now we are done with partioning and formatting and we now need to mount our newly made ROOT partion filesystem, you do that like so:<BR>

@@ -65,7 +65,7 @@ This command is only temporary, that means after restart it will be back at US
 To list all avaible keymaps do the following<BR> 
 `find /usr/share/kbd/keymaps | less` <BR>
 
-Or to find only those with your country letters. (this finds all files in keymaps that contains "dk". change "dk" to you country letters) <BR>
+Or to find only those with your country letters. (this finds all files in keymaps that contains "dk". change "dk" to your country letters) <BR>
 `find /usr/share/kbd/keymaps | grep -i dk` <BR>
 You will propally see something like this <BR>
     `/usr/share/kbd/keymaps/i386/qwerty/dk-latin1.map.gz` <BR>
@@ -114,17 +114,17 @@ This should show something like this:<BR>
 The "`/dev/sdb`" is my pc disk with my previous Arch Linux installation while the "`/dev/sda`" is my bootable usb-disk, where the Arch is image is placed.<BR>
 Disk names in linux are named after the alfabet, so `sd*`(where * is the next letter in the alfabet). (eg. `sda` for the first disk, `sdb` for the secound disk, `sdc` for the third disk etc.)<BR>
 The secound line "`└─/dev/sdb1`" is a partion of disk "`sdb`" so partions are named after number (eg. `sdb1`, `sdb2`, `sdb3`)<BR>
-You should just ignore "/dev/sr0", "/dev/loop0" and your bootmedia (in my case /dev/sda). All of these are used by the bootmedia.<BR>
+You should just ignore "`/dev/sr0`", "`/dev/loop0`" and your bootmedia (in my case `/dev/sda`). All of these are used by the bootmedia.<BR>
 
-There is alot of different ways to partion your disks so for more info check out the formating and partioning methods folder (or look it up on google)<BR>
+There is alot of different ways to partion your disks so for more info check out the [Arch Wiki](https://wiki.archlinux.org/index.php/partitioning#Partition_scheme) (or look it up on google)<BR>
 For these notes i will make just 1 partion (a root partion) for everything.<BR>
 A command for that is the following:<BR>
 `cfdisk /dev/sda`<BR>
 
-Replace "sda" with the disk you want to install Arch Linux on<BR>
+Replace "`sda`" with the disk you want to install Arch Linux on<BR>
 That command will bring up a "Pseudo-graphics" interface. You use the arrow keys to navigate.<BR>
 
-If you by mistake deletes a partion you didn´t want to delete, just click enter when you are hovering over "[   Quit    ]"<BR>
+If you by mistake deletes a partion you didn´t want to delete, just click enter when you are hovering over "`[   Quit    ]`"<BR>
 
 I only have 1 partion so i will be deleting just that by hovering over "/dev/sda1" with the up and down arrow keys and choose "[ Delete ]" by moving the hover bar with left and right arrow keys.<BR>
 When you are hovering over the partion and "[ Delete ]" hit enter to delete it<BR>

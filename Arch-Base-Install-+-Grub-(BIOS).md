@@ -103,13 +103,13 @@ To list file systems and disks:
 lsblk -f -p
 This should show something like this:
 ```
-    "NAME         FSTYPE      LABEL       UUID
-    "/dev/sdb                                                                                                 "
-    "└─/dev/sdb1  vfat        ARCH_201701 1702-0227                               /run/archiso/bootmnt        "
-    "/dev/sr0                                                                                                 "
-    "/dev/loop0   squashfs                                                        /run/archiso/sfs/airootfs   "
-    "/dev/sda                                                                                                 "
-    "└─/dev/sda1  ext4                    f2b67d75-090a-4d96-8dfb-e814dd07fd13                                "
+    NAME         FSTYPE      LABEL       UUID
+    /dev/sdb                                                                                                 
+    └─/dev/sdb1  vfat        ARCH_201701 1702-0227                               /run/archiso/bootmnt        
+    /dev/sr0                                                                                                 
+    /dev/loop0   squashfs                                                        /run/archiso/sfs/airootfs   
+    /dev/sda                                                                                                 
+    └─/dev/sda1  ext4                    f2b67d75-090a-4d96-8dfb-e814dd07fd13                                
 ```
 The "/dev/sdb" is my pc disk with my previous Arch Linux installation while the "/dev/sda" is my bootable usb-disk, where the Arch is image is placed.
 Disk name in linux are named after the alfabet, so sd*(where * is the next letter in the alfabet). (eg. sda for the first disk, sdb for the secound disk, sdc for the third disk etc.)
@@ -160,13 +160,13 @@ mount /dev/sda1 /mnt
 "`/dev/sda1`" is you partion and "`/mnt`" is where you mount the partion to.
 you´ll also need to mount your other partions if you have any other partions. I wont be doing this i´ll only show how to do it. So i wont be doing anything inside that box.
 
-```
-┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│create a folder for your partion on you mounted root partion for this example ill be doing it for the "boot" partion   │
-│mkdir /mnt/boot                                                                                                        │
-│That will create the boot folder on your root partion                                                                  │
-│Now you need to mount the boot partion to your boot folder:                                                            │
-│mount /dev/sda2 /mnt/boot                                                                                              │
-│/dev/sda2 should be changed into the coresponding partion (ie. if you boot partion is "/dev/sdb3")                     │
-└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-```
+
+┌─────────────────────────────────────────────────────┐<BR>
+│Create a folder for your partion on you mounted root partion for this example i´ll be doing it for the "boot" partion  │<BR>
+│`mkdir /mnt/boot`                                 test                                                                     │<BR>
+│That will create the boot folder on your root partion                                                                  │<BR>
+│Now you need to mount the boot partion to your boot folder:           test                                                 │<BR>
+│`mount /dev/sda2 /mnt/boot`                                                                                            │<BR>
+│`/dev/sda2` should be changed into the coresponding partion (ie. if you boot partion is "`/dev/sdb3`")                 │<BR>
+└─────────────────────────────────────────────────────┘<BR>
+

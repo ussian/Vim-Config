@@ -3,8 +3,9 @@
  * [Create bootable media](Arch-Base-Install-+-Grub-(BIOS).md#create-bootable-media)
  * [Arch Linux iso image Boot Menu](Arch-Base-Install-+-Grub-(BIOS).md#arch-linux-iso-image-boot-menu)
  * [First things first](Arch-Base-Install-+-Grub-(BIOS).md#first-things-first)
- * [](Arch-Base-Install-+-Grub-(BIOS).md#)
- * [](Arch-Base-Install-+-Grub-(BIOS).md#)
+ * [Partioning and mounting](Arch-Base-Install-+-Grub-(BIOS).md#partioning-and-mounting)
+ * [Formating](Arch-Base-Install-+-Grub-(BIOS).md#formating)
+ * [Configuration and installalltion base system](Arch-Base-Install-+-Grub-(BIOS).md#configuration-and-installalltion-base-system)
 
 ###Pre reading notes
 
@@ -173,7 +174,7 @@ you´ll also need to mount your other partions if you have any other partions. I
 └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-##Configure and install base system
+##Configuration and installalltion base system
 
 
 The `base` is needed for Arch Linux and the `base-devel` is used for build packages and more.

@@ -177,10 +177,10 @@ you´ll also need to mount your other partions if you have any other partions. I
 ##Configuration and installalltion base system
 
 
-The `base` is needed for Arch Linux and the `base-devel` is used for build packages and more.
-I recommend getting the base-devel aswell doesn´t use much space and if you dont know if you need it, might aswell get it.
-`pacstrap /mnt base base-devel`
-This will install the `base` system and `base-devel` on to the `/mnt` (And remember we mounted our `/dev/sda1` to `/mnt`. So we are bassicly installing these packages to the new partion) 
+The `base` is needed for Arch Linux and the `base-devel` is used for build packages and more.<BR>
+I recommend getting the base-devel aswell doesn´t use much space and if you dont know if you need it, might aswell get it.<BR>
+`pacstrap /mnt base base-devel`<BR>
+This will install the `base` system and `base-devel` on to the `/mnt` (And remember we mounted our `/dev/sda1` to `/mnt`. So we are bassicly installing these packages to the new partion)<BR> 
 
 To generate the fstab file do the following:<BR>
 `genfstab -U /mnt >> /mnt/etc/fstab`<BR>

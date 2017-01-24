@@ -176,23 +176,25 @@ you´ll also need to mount your other partions if you have any other partions. I
 ##Configure and install base system
 
 
-The `base` is needed for Arch Linux and the `base-devel` is used for ????
+The `base` is needed for Arch Linux and the `base-devel` is used for build packages and more.
+I recommend getting the base-devel aswell doesn´t use much space and if you dont know if you need it, might aswell get it.
 `pacstrap /mnt base base-devel`
 This will install the `base` system and `base-devel` on to the `/mnt` (And remember we mounted our `/dev/sda1` to `/mnt`. So we are bassicly installing these packages to the new partion) 
 
+To generate the fstab file do the following:<BR>
 `genfstab -U /mnt >> /mnt/etc/fstab`<BR>
+The fstab file is used by the system to know what drives to mount automaticly and whetever we should have read/write access and [more](http://www.howtogeek.com/howto/38125/htg-explains-what-is-the-linux-fstab-and-how-does-it-work/)
 
-
-This will change your root at the bootable media to the root on your newly installed packages.
+This will change your root at the bootable media to the root on your newly installed packages.<BR>
 `arch-chroot /mnt`<BR>
 
-to view all the avaible tim zones run this command
-`ls /usr/share/zoneinfo`
-this will list all the different regions and the next command you´ll need to replace region with your region
-`ls /usr/shar/zoneinfo/region`
-this will list all cities in that region.
-to set the timezone, replace Region and City with you region and city
-ln -s /usr/share/zoneinfo/Region/City /etc/localtime
+To view all the avaible tim zones run this command<BR>
+`ls /usr/share/zoneinfo`<BR>
+This will list all the different regions and the next command you´ll need to replace region with your region<BR>
+`ls /usr/shar/zoneinfo/region`<BR>
+This will list all cities in that region.<BR>
+To set the timezone, replace Region and City with you region and city<BR>
+`ln -s /usr/share/zoneinfo/Region/City /etc/localtime`<BR>
 
 
 

@@ -187,15 +187,45 @@ To generate the fstab file do the following:<BR>
 The fstab file is used by the system to know what drives to mount automaticly and whetever we should have read/write access and [more](http://www.howtogeek.com/howto/38125/htg-explains-what-is-the-linux-fstab-and-how-does-it-work/)
 
 This will change your root at the bootable media to the root on your newly installed packages.<BR>
-`arch-chroot /mnt`<BR>
+`arch-chroot /mnt /bin/bash`<BR>
+
+To disable the beeb sound again.
+```setterm -blength 0```
+**-------------------------------> Is setterm permantly or temporary <-------------------------------**
+
 
 To view all the avaible tim zones run this command<BR>
 `ls /usr/share/zoneinfo`<BR>
 This will list all the different regions and the next command you´ll need to replace region with your region<BR>
 `ls /usr/shar/zoneinfo/region`<BR>
 This will list all cities in that region.<BR>
-To set the timezone, replace Region and City with you region and city<BR>
-`ln -s /usr/share/zoneinfo/Region/City /etc/localtime`<BR>
+To set the timezone, replace Region and City with you region and city (Remeber it´s case sensitive)<BR>
+`ln -sf /usr/share/zoneinfo/Region/City /etc/localtime`<BR>
+
+The following will set the hardware clock from the system clock.<BR>
+`hwclock --systohc`<BR>
+
+
+The command below i used to generate an intial ramdisk based on the linux preset (read more in `man mkinitcpio` or [Here](https://wiki.archlinux.org/index.php/mkinitcpio#Image_creation_and_activation))<BR>
+`mkinitcpio -p linux`<BR>
+
+Replace `HOSTNAME` with a hostname of your choice<BR>
+`echo HOSTNAME > /etc/hostname`<BR>
+
+For a list of you network devices<BR>
+`ip link`<BR>
+You´ll get mulitiple network devices depending on your pc (ie. a laptop may have three. one for loopback another for your ethernet and last one for wireless)<BR>
+You should look for one with the `state UP mode` and remeber/take note of the first couple of letter like `enp0s25` <BR>
+Then to enable your ethernet dhcp service for your ethernet<BR>
+`systemctl enable dhcpcd@enp0s25.service`<BR>
+
+Now to install some not 100% esiential, but i still think that it´s nesesarry.<BR>
+`pacman -S dialog iw networkmanager network-manager-applet gnome-keyring`<BR>
+you´ll be asked what package to choose ill just go with the default `mesa-libgl` (you may want to google the different packages)<BR>
+
+Create a root password.<BR>
+`passwd`<BR>
+Now enter a root password of choice (Make it secure!)<BR>
 
 
 

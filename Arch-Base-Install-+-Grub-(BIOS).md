@@ -52,9 +52,8 @@ This means you have a root prompt ready for use. **Be warned** you can potention
 
 ###First things first
 
-First thing to is remove the anoying beeb sound when ever you tab-complete or try to tab-complete a command. (or doing something the terminal doesnt like in general)<BR>
+First thing to is remove the anoying beeb sound whenever you tab-complete or try to tab-complete a command. (or doing something the terminal doesnt like in general)<BR>
 ```setterm -blength 0```
-**-------------------------------> Is setterm permantly or temporary <-------------------------------**
 
 
 Second thing to do is load the correct keymap (The standard is US)
@@ -62,25 +61,6 @@ Second thing to do is load the correct keymap (The standard is US)
 replace DK with yours country´s letter (eg. dk for denmark, uk for united kingdom, us for united states, es for spain)<BR>
 `loadkeys dk`<BR>
 This command is only temporary, that means after restart it will be back at US
-
-To list all avaible keymaps do the following<BR> 
-`find /usr/share/kbd/keymaps | less` <BR>
-
-Or to find only those with your country letters. (this finds all files in keymaps that contains "dk". change "dk" to your country letters) <BR>
-`find /usr/share/kbd/keymaps | grep -i dk` <BR>
-You will propally see something like this <BR>
-    `/usr/share/kbd/keymaps/i386/qwerty/dk-latin1.map.gz` <BR>
-    `/usr/share/kbd/keymaps/i386/qwerty/dk.map.gz`<BR>
-    `/usr/share/kbd/keymaps/i386/qwerty/mac-dk-latin1.map.gz`<BR>
-    `/usr/share/kbd/keymaps/i386/qwertz/de-latin1-nodeadkeys.map.gz`<BR>
-    `/usr/share/kbd/keymaps/mac/all/mac-de-latin1-nodeadkeys.map.gz`<BR>
-    `/usr/share/kbd/keymaps/mac/all/mac-dk-latin1map.gz`<BR>
-    
-For more information on "nodeadkeys" look here ([dead keys](http://askubuntu.com/questions/56560/what-exactly-is-meant-by-eliminate-dead-keys)). <BR>
-I dont know the difference between "latin1" and non "latin1", so just try the one or the other and test the layout by typing speciel characters. if the wrong character comes on the screen try another keymap.
-
-To set current keymap, and to make it permantly do the following (replace dk.map.gz with your keymap:<BR>
-`localectl set-keymap --no-convert dk.map.gz`
 
 
 Next up is to check your internet connection (I recommend that you use a Ethernet connection ie. a cable connection)<BR>
@@ -186,15 +166,48 @@ To generate the fstab file do the following:<BR>
 `genfstab -U /mnt >> /mnt/etc/fstab`<BR>
 The fstab file is used by the system to know what drives to mount automaticly and whetever we should have read/write access and [more](http://www.howtogeek.com/howto/38125/htg-explains-what-is-the-linux-fstab-and-how-does-it-work/)
 
+Now to install grub, you´ll need to install `grub-bios`  onto your new system (located at `/mnt`)(this will make `grub-install` command availble when you are in your new system)<BR>
+`pacstrap /mnt grub-bios`<BR>
+
 This will change your root at the bootable media to the root on your newly installed packages.<BR>
 `arch-chroot /mnt /bin/bash`<BR>
 
-To disable the beeb sound again.
-```setterm -blength 0```
-**-------------------------------> Is setterm permantly or temporary <-------------------------------**
+
+To disable the beeb sound again.<BR>
+`setterm -blength 0` (non perm)<BR>
+(this should be perm) Uncomment `set bell-style none` by changing<BR> 
+`# set bell-style none`<BR>
+to <BR>
+`set bell-style none`<BR>
+or if its not there just add it.<BR>
+
+And to make a persistent keymap layout do:
+To list all avaible keymaps do the following<BR> 
+`find /usr/share/kbd/keymaps | less` <BR>
+
+Or to find only those with your country letters. (this finds all files in keymaps that contains "dk". change "dk" to your country letters) <BR>
+`find /usr/share/kbd/keymaps | grep -i dk` <BR>
+You will propally see something like this <BR>
+    `/usr/share/kbd/keymaps/i386/qwerty/dk-latin1.map.gz` <BR>
+    `/usr/share/kbd/keymaps/i386/qwerty/dk.map.gz`<BR>
+    `/usr/share/kbd/keymaps/i386/qwerty/mac-dk-latin1.map.gz`<BR>
+    `/usr/share/kbd/keymaps/i386/qwertz/de-latin1-nodeadkeys.map.gz`<BR>
+    `/usr/share/kbd/keymaps/mac/all/mac-de-latin1-nodeadkeys.map.gz`<BR>
+    `/usr/share/kbd/keymaps/mac/all/mac-dk-latin1map.gz`<BR>
+    
+For more information on "nodeadkeys" look here ([dead keys](http://askubuntu.com/questions/56560/what-exactly-is-meant-by-eliminate-dead-keys)). <BR>
+I dont know the difference between "latin1" and non "latin1", so just try the one or the other and test the layout by typing speciel characters. if the wrong character comes on the screen try another keymap.
+
+To set current keymap, and to make it permantly do the following (replace dk.map.gz with your keymap:<BR>
+`localectl set-keymap --no-convert dk.map.gz`
 
 
-To view all the avaible tim zones run this command<BR>
+Now the continueation of grub install. (This will install grub and not only the tools for it)<BR>
+`grub-install /dev/sda`<BR>
+Then to generate the grub config file:<BR>
+`grub-mkconfig -o /boot/grub/grub.cfg`<BR>
+
+To view all the avaible time zones run this command<BR>
 `ls /usr/share/zoneinfo`<BR>
 This will list all the different regions and the next command you´ll need to replace region with your region<BR>
 `ls /usr/shar/zoneinfo/region`<BR>
@@ -221,14 +234,19 @@ Then to enable your ethernet dhcp service for your ethernet<BR>
 
 Now to install some not 100% esiential, but i still think that it´s nesesarry.<BR>
 `pacman -S dialog iw networkmanager network-manager-applet gnome-keyring`<BR>
-you´ll be asked what package to choose ill just go with the default `mesa-libgl` (you may want to google the different packages)<BR>
+you´ll be asked what package to choose. Ill just go with the default `mesa-libgl` (you may want to google the different packages)<BR>
 
 Create a root password.<BR>
 `passwd`<BR>
-Now enter a root password of choice (Make it secure!)<BR>
+Now enter a root password of choice, twice. (Make it secure!)<BR>
+
+Now the restart process. First jump out to the root on the bootmedia:<BR>
+`exit`<BR>
+Then unmount your drives and partions<BR>
+`umount -R /mnt`<BR>
+And at last reboot the system<BR>
+`systemctl reboot`<BR>
+When the system is shutdown (in the reboot sequence) unplug the bootmedia or make sure that your bios doesnt boot into you arch-iso bootmedia
 
 
-
-
-
-
+##Personalisation of arch

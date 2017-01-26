@@ -282,10 +282,10 @@ Now when it´s open scroll down to "user privelege specification" and add the fo
 to save the file click "Ctrl" and "o" then "enter". To exit click "Ctrl" and "x" <BR>
 you can now logout of root and login into your user.<BR>
 
-####pacman.conf adding "multilib" and installing "yaourt"
+####pacman.conf adding "multilib" and installing "yaourt" (AUR support)
 Open you pacman.conf file<BR>
 `sudo nano /etc/pacman.conf`
-Go down to `#[multilib]` and make it look like so so it will look like so:<BR>
+Go down to `#[multilib]` uncomment that, the line under and add the other 3 lines:<BR>
 ```
 [multilib]
 Include = /etc/pacman.d/mirrorlist
@@ -299,8 +299,6 @@ Then Run this: (Do `man pacman` to learn what the different parameters do)<BR>
 `sudo pacman -Syyu`
 `sudo pacman yaourt`
 
-
-
 ####Kill that beep sound for good (ie. killing pc speaker)
 Jump into a root shell:<BR>
 `sudo su`<BR>
@@ -309,10 +307,57 @@ then do:<BR>
 Then exit to get back to the session with your user.<BR>
 `exit`<BR>
 
+####Some good to install packages
+´sudo pacman -S multilib-devel fakeroot git jshon wget make pkg-config autoconf automake patch`<BR>
+It will ask which one you want. Just hit "enter" to choose default which is all
+Then you´ll be asked if you want to remove "gcc", and here type "y" and hit enter (because default is the capital letter which is "N")<BR>
+And the same as before except its "gcc-libs" instead. just do the same as before "y" -> "enter"<BR>
+To the last one just hit enter (default is "Y")<BR>
 
+####Alsa(sound)
+for sound you´ll need alasa utilities get them like so:<BR>
+`sudo pacman -S alsa-utils`<BR>
+then to edit the volume, mute, unmute and more do:<BR>
+`alsamixer`<BR>
+you control it with the arrow keys, "esc" to save and quit.<BR>
 
-####test
-####this
- 
+####Xorg for desktop envoirment
+To install it:<BR>
+`sudo pacman -S xorg-server xorg-xinit xorg-server-utils mesa`<BR>
+(do the [Nvidia] install if you have a nvidia card) and then: (only if you have nvidia)<BR>
+`sudo pacman -S nvidia-xconfig`<BR>
+
+####Nvidia
+Some Nvidia goodies<BR>
+`sudo pacman -S nvidia lib32-nvidia-utils`<BR>
+
+####Broadcom wifi
+This only needed if you have broadcom wifi card<BR>
+`yaourt -S broadcom-wl`<BR>
+Then reboot (`systemctl reboot`)<BR>
+<BR>
+`sudo systemctl enable NetworkManager`<BR>
+`sudo systemctl start NetworkManager.service`<BR>
+
+For a list of you network devices<BR>
+`ip link`<BR>
+You´ll get mulitiple network devices depending on your pc (ie. a laptop may have three. one for loopback another for your ethernet and last one for wireless)<BR>
+You should look for one with the `state UP mode` and remeber/take note of the first couple of letter like `enp0s25` <BR>
+Then to enable your wifi dhcp service for your ethernet<BR>
+`systemctl enable dhcpcd@enp0s25.service`<BR>
+Rember to replace "`enp0s25`" with your broadcom device<BR>
+
+####Desktop Envoirment: xfce4 with lxdm
+install some xorg utilites needed for xfce4:<BR>
+`sudo pacman -S xorg-twm xorg-xclock xterm`
+then to test it:
+`startx`
+this should open 3 windows move mouse to each of them and type "`exit`"
+Now to install lxdm and xfce4
+`sudo pacman -S lxdm xfce4 xfce4-goodies`<BR>
+And then enable and start the lxdm
+`sudo systemctl enable lxdm.service`<BR>
+`sudo systemctl start lxdm.service`<BR>
+
 
 

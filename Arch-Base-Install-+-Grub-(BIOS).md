@@ -263,18 +263,54 @@ The rest of this is just personalisation, but feel free to read on. (change pack
 
 ###Personalisation of arch
 
-####sudo
-####test
-####this
- 
+####add user
 First off we´ll wanna add user so we dont run around as root (if you want a better understanding on `useradd` do `man useradd`)<BR>
 `useradd -m -g users -s /bin/bash ussian`<BR>
 swap out `ussian` with the username of your choice<BR>
 And then set the password by doing like so (and again swap out ussian with your username): <BR>
 ´passwd ussian`<BR>
 Then enter the desired password twice.<BR>
-
+####sudo
 Now install sudo to be available to be able to do things as root<BR>
 `pacman -S sudo`<BR>
 `pacman` is arch package manager.<BR>
+
+edit the sudo file to add your user `visudo` will open it in `vi` editor, else change nano into your preferred editor<BR>
+`EDITOR=nano visudo`<BR>
+Now when it´s open scroll down to "user privelege specification" and add the following line beneath root (replace `ussian` with your username)<BR>
+`ussian ALL=(ALL) ALL`<BR>
+to save the file click "Ctrl" and "o" then "enter". To exit click "Ctrl" and "x" <BR>
+you can now logout of root and login into your user.<BR>
+
+####pacman.conf adding "multilib" and installing "yaourt"
+Open you pacman.conf file<BR>
+`sudo nano /etc/pacman.conf`
+Go down to `#[multilib] and uncomment that line and the one under that, so it will look like so:<BR>
+```[multilib]
+Include = /etc/pacman.d/mirrorlist
+
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch```<BR>
+to save and exit: "Ctrl" + "o" -> "enter", then "Ctrl" + "x".<BR>
+Then Run this: (Do `man pacman` to learn what the different parameters do)<BR>
+`sudo pacman -Syyu`
+`sudo pacman yaourt`
+
+
+
+####Kill that beep sound for good (ie. killing pc speaker)
+Jump into a root shell:<BR>
+`sudo su`<BR>
+then do:<BR>
+`echo "blacklist pcspkr" > /etc/modprope.d/nobeep.conf`<BR>
+Then exit to get back to the session with your user.<BR>
+`exit`<BR>
+
+
+
+####test
+####this
+ 
+
 

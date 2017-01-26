@@ -78,7 +78,7 @@ to make sure the clock is accurate do this:<BR>
 
 
 
-##Partioning and mounting
+###Partioning and mounting
 There is a handfull of tools and commands avaiable ill only be using some of them. You check the list [here](https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools)<BR>
 To list file systems and disks:<BR>
 `lsblk -f -p`<BR>
@@ -129,7 +129,7 @@ You will then be asked if you are sure that you want to make these changes. type
 Afterwards you just the hoverbar to the "`[  Quit  ]`" and hit enter to exit.<BR>
 
 
-##Formating
+###Formating
 Now when we are done with partioning we need to format the partion(And again more details in [Arch Wiki filesystems](https://wiki.archlinux.org/index.php/File_systems#Create_a_filesystem))<BR>
 We will just format our single root partion to the filsystem "ext4". To do this run this command:<BR>
 `mkfs.ext4 /dev/sda1`<BR>
@@ -154,7 +154,7 @@ you´ll also need to mount your other partions if you have any other partions. I
 └───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-##Configuration and installalltion base system
+###Configuration and installalltion base system
 
 
 The `base` is needed for Arch Linux and the `base-devel` is used for build packages and more.<BR>
@@ -261,11 +261,11 @@ And congratulaition you now have an Arch Linux OS running! <BR>
 The rest of this is just personalisation, but feel free to read on. (change packages out like you want (ie. desktop envoirment etc.))<BR>
 
 
-##Personalisation of arch
+###Personalisation of arch
 
- * sudo
- * test
- * this
+####sudo
+####test
+####this
  
 First off we´ll wanna add user so we dont run around as root (if you want a better understanding on `useradd` do `man useradd`)<BR>
 `useradd -m -g users -s /bin/bash ussian`<BR>

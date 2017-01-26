@@ -248,5 +248,33 @@ And at last reboot the system<BR>
 `systemctl reboot`<BR>
 When the system is shutdown (in the reboot sequence) unplug the bootmedia or make sure that your bios doesnt boot into you arch-iso bootmedia
 
+When its booting you´ll see the grub screen (here you can choose what os to boot) it will automatically boot arch in couple of secounds.<BR>
+And arch i done booting when you see:<BR>
+```
+Arch Linux "inser version number"-ARCH (tty1)<BR>
+<BR>
+localhost login:<BR><BR>
+```
+The user name is `root` and the password is what you set it to earlier.<BR>
+
+And congratulaition you now have an Arch Linux OS running! <BR>
+The rest of this is just personalisation, but feel free to read on. (change packages out like you want (ie. desktop envoirment etc.))<BR>
+
 
 ##Personalisation of arch
+
+ * sudo
+ * test
+ * this
+ 
+First off we´ll wanna add user so we dont run around as root (if you want a better understanding on `useradd` do `man useradd`)<BR>
+`useradd -m -g users -s /bin/bash ussian`<BR>
+swap out `ussian` with the username of your choice<BR>
+And then set the password by doing like so (and again swap out ussian with your username): <BR>
+´passwd ussian`<BR>
+Then enter the desired password twice.<BR>
+
+Now install sudo to be available to be able to do things as root<BR>
+`pacman -S sudo`<BR>
+`pacman` is arch package manager.<BR>
+

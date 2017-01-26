@@ -285,14 +285,16 @@ you can now logout of root and login into your user.<BR>
 ####pacman.conf adding "multilib" and installing "yaourt"
 Open you pacman.conf file<BR>
 `sudo nano /etc/pacman.conf`
-Go down to `#[multilib] and uncomment that line and the one under that, so it will look like so:<BR>
-```[multilib]
+Go down to `#[multilib]` and make it look like so so it will look like so:<BR>
+```
+[multilib]
 Include = /etc/pacman.d/mirrorlist
 
 [archlinuxfr]
 SigLevel = Never
-Server = http://repo.archlinux.fr/$arch```<BR>
-to save and exit: "Ctrl" + "o" -> "enter", then "Ctrl" + "x".<BR>
+Server = http://repo.archlinux.fr/$arch
+```
+To save and exit: "Ctrl" + "o" -> "enter", then "Ctrl" + "x".<BR>
 Then Run this: (Do `man pacman` to learn what the different parameters do)<BR>
 `sudo pacman -Syyu`
 `sudo pacman yaourt`

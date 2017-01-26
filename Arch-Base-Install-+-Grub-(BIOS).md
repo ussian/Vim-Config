@@ -264,7 +264,7 @@ The rest of this is just personalisation, but feel free to read on. (change pack
 ###Personalisation of arch
 
 ####add user
-First off we´ll wanna add user so we dont run around as root (if you want a better understanding on `useradd` do `man useradd`)<BR>
+First off we´ll wanna add user so we dont run around as root (for more information on `useradd` do `man useradd`)<BR>
 `useradd -m -g users -s /bin/bash ussian`<BR>
 swap out `ussian` with the username of your choice<BR>
 And then set the password by doing like so (and again swap out ussian with your username): <BR>

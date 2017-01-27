@@ -364,7 +364,23 @@ install both packages:<BR>
 `sudo pacman -S plasma-desktop sddm<BR>
 Then enable and start sddm:<BR>
 `sudo systemctl enable --now sddm.service`<BR>
-The plasma-desktop is minimal install so it doesnt contain a terminal emulator, so ill install "yakuake" which contains "konsole"<BR>
+The plasma-desktop is minimal install so it doesnt contain a terminal emulator,  install a terminal (eg."konsole")<BR>
+`sudo pacman -S konsole`<BR>
+
+####Yakuake
+install the package:<BR>
 `sudo pacman -S yakuake`<BR>
+Make it start at bootup:<BR>
+system settings -> Startup and Shutdown -> Autostart -> Add Program -> under system -> click yakuake -> OK<BR>
+
+####Configure sddm
+[sddm arch wiki](https://wiki.archlinux.org/index.php/SDDM)<BR>
+
+####Change mouse speed
+look here: https://bbs.archlinux.org/viewtopic.php?id=75614<BR>
+
+####File decompressing and sound control and create user folders
+`sudo pacman -S file-roller unrar p7zip pulseaudio pulseaudio-alsa pavucontrol xdg-user-dirs`<BR>
+
 
 

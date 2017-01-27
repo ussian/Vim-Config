@@ -349,15 +349,22 @@ Rember to replace "`enp0s25`" with your broadcom device<BR>
 
 ####Desktop Envoirment: xfce4 with lxdm
 install some xorg utilites needed for xfce4:<BR>
-`sudo pacman -S xorg-twm xorg-xclock xterm`
-then to test it:
-`startx`
-this should open 3 windows move mouse to each of them and type "`exit`"
-Now to install lxdm and xfce4
+`sudo pacman -S xorg-twm xorg-xclock xterm`<BR>
+then to test it:<BR>
+`startx`<BR>
+this should open 3 windows move mouse to each of them and type "`exit`"<BR>
+Now to install lxdm and xfce4<BR>
 `sudo pacman -S lxdm xfce4 xfce4-goodies`<BR>
-And then enable and start the lxdm
-`sudo systemctl enable lxdm.service`<BR>
-`sudo systemctl start lxdm.service`<BR>
+And then enable and start the lxdm<BR>
+`sudo systemctl enable --now lxdm.service`<BR>
+The "`--now´" just starts the service after enabling it<BR>
 
+####Destop Envoirment: sddm with kde plasma
+install both packages:<BR>
+`sudo pacman -S plasma-desktop sddm<BR>
+Then enable and start sddm:<BR>
+`sudo systemctl enable --now sddm.service`<BR>
+The plasma-desktop is minimal install so it doesnt contain a terminal emulator, so ill install "yakuake" which contains "konsole"<BR>
+`sudo pacman -S yakuake`<BR>
 
 

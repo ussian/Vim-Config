@@ -1,2 +1,1 @@
-# Arch-Linux-Notes
-Notes for installing Arch Linux
+# Vimrc files + other vim stuff
